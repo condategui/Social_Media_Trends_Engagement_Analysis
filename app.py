@@ -7,20 +7,73 @@ warnings.filterwarnings('ignore')
 
 from components.header import render_header
 from components.footer import render_footer
-from pages.home import home_page
-from pages.platforms import platforms_section
-from pages.hashtags import hashtags_section
-from pages.content_type import content_type_section
-from pages.regions import regions_section
-from pages.machine_learning import machine_learning_section
-from pages.PowerBI import BI_section
-from pages.conclusions import conclusions_section
+from components.home import home_page
+from components.platforms import platforms_section
+from components.hashtags import hashtags_section
+from components.content_type import content_type_section
+from components.regions import regions_section
+from components.machine_learning import machine_learning_section
+from components.PowerBI import BI_section
+from components.conclusions import conclusions_section
 
 st.set_page_config(
     page_title="📊 Social Media Trends Engagement Analysis",
     page_icon="📊",
     layout="wide",
     initial_sidebar_state="expanded"
+)
+
+# Apply custom CSS for a black background, button colors, and white text
+st.markdown(
+    """
+    <style>
+    .reportview-container {
+        background: #000000;
+        color: white;
+    }
+    .sidebar .sidebar-content {
+        background: #000000;
+        color: white;
+    }
+    .stButton > button {
+        color: white;
+    }
+    .stButton > button:nth-of-type(1) {
+        background-color: #d04243;
+    }
+    .stButton > button:nth-of-type(2) {
+        background-color: #BBDB90;
+    }
+    .stButton > button:nth-of-type(3) {
+        background-color: #d0c2f7;
+    }
+    .stButton > button:nth-of-type(4) {
+        background-color: #f4a259;
+    }
+    .stButton > button:nth-of-type(5) {
+        background-color: #A5D9E3;
+    }
+    .stButton > button:nth-of-type(6) {
+        background-color: #CF6679;
+    }
+    .stButton > button:nth-of-type(7) {
+        background-color: #d04243;
+    }
+    .stButton > button:nth-of-type(8) {
+        background-color: #BBDB90;
+    }
+    .stButton > button:hover {
+        filter: brightness(1.2);
+    }
+    .stTitle, .stHeader {
+        color: #A5D9E3;
+    }
+    .stMarkdown > div {
+        color: #CF6679;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
 )
 
 @st.cache_data
@@ -44,13 +97,13 @@ def load_data():
 
 def main():
     render_header()
-    raw_data, cleaned_data = load_data() # Unpack the tuple returned by load_data
+    cleaned_data = load_data() # Unpack the tuple returned by load_data
     
-    if raw_data is not None and cleaned_data is not None:
+    if cleaned_data is not None:
         st.sidebar.title("Menu")
         
-        # Define the pages with their icons and functions
-        pages = {
+        # Define the components with their icons and functions
+        components = {
             "🏠 Home Page": home_page,
             "📱 Platforms": platforms_section,
             "#️⃣ Hashtags": hashtags_section,
@@ -66,12 +119,12 @@ def main():
             st.session_state.current_page = "🏠 Home Page"
         
         # Create a button for each page
-        for page_name in pages.keys():
+        for page_name in components.keys():
             if st.sidebar.button(page_name, key=page_name):
                 st.session_state.current_page = page_name
         
         # Display the selected page
-        pages[st.session_state.current_page]()
+        components[st.session_state.current_page]()
         
         render_footer()
     else:

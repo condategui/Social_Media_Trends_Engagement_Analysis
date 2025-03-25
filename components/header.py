@@ -5,12 +5,12 @@ def render_header():
     
     with col1:
         # Logo de la aplicación
-        st.image("img/logo.png", width=100)
+        st.image("img/logo.png", width=400)
     
     with col2:
         # Título de la aplicación
-        st.markdown("<h1 style='text-align: center;'>Social Media in Data</h1>", unsafe_allow_html=True)
-        st.markdown("<h3 style='text-align: center;'>Trends Engagement Analysis</h3>", unsafe_allow_html=True)
+        st.markdown("<h1 style='text-align: center;'>Social Media Trends and Engagement Analysis</h1>", unsafe_allow_html=True)
+        st.markdown("<h3 style='text-align: center;'> - Trust the Data - </h3>", unsafe_allow_html=True)
     
     with col3:
         st.empty()  # This is just to balance the columns
