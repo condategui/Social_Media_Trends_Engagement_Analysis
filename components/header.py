@@ -4,8 +4,7 @@ def render_header():
     col1, col2, col3 = st.columns([1, 2, 1])
     
     with col1:
-        # Logo de la aplicación
-        st.image("img/logo.png", width=400)
+        st.empty()  # This is just to balance the columns
     
     with col2:
         # Título de la aplicación

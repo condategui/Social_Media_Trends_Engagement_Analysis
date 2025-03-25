@@ -27,12 +27,12 @@ st.set_page_config(
 st.markdown(
     """
     <style>
-    .reportview-container {
-        background: #000000;
+    .css-18e3th9 {
+        background-color: #000000;
         color: white;
     }
-    .sidebar .sidebar-content {
-        background: #000000;
+    .css-1d391kg, .css-1d391kg div {
+        background-color: #000000;
         color: white;
     }
     .stButton > button {
@@ -41,40 +41,15 @@ st.markdown(
     .stButton > button:nth-of-type(1) {
         background-color: #d04243;
     }
-    .stButton > button:nth-of-type(2) {
-        background-color: #BBDB90;
-    }
-    .stButton > button:nth-of-type(3) {
-        background-color: #d0c2f7;
-    }
-    .stButton > button:nth-of-type(4) {
+    .stButton > button:hover {
         background-color: #f4a259;
     }
-    .stButton > button:nth-of-type(5) {
-        background-color: #A5D9E3;
-    }
-    .stButton > button:nth-of-type(6) {
-        background-color: #CF6679;
-    }
-    .stButton > button:nth-of-type(7) {
-        background-color: #d04243;
-    }
-    .stButton > button:nth-of-type(8) {
-        background-color: #BBDB90;
-    }
-    .stButton > button:hover {
-        filter: brightness(1.2);
-    }
-    .stTitle, .stHeader {
-        color: #A5D9E3;
-    }
-    .stMarkdown > div {
-        color: #CF6679;
+    h1, h2, h3, h4, h5, h6, p, div {
+        color: white !important;
     }
     </style>
     """,
-    unsafe_allow_html=True
-)
+    unsafe_allow_html=True)
 
 @st.cache_data
 def load_data():
@@ -100,6 +75,7 @@ def main():
     cleaned_data = load_data() # Unpack the tuple returned by load_data
     
     if cleaned_data is not None:
+        st.sidebar.image("img/logo.png", width=300)
         st.sidebar.title("Menu")
         
         # Define the components with their icons and functions
@@ -107,7 +83,7 @@ def main():
             "🏠 Home Page": home_page,
             "📱 Platforms": platforms_section,
             "#️⃣ Hashtags": hashtags_section,
-            "🤳🏻 Content Type": content_type_section,
+            "📷 Content Type": content_type_section,
             "🌍 Regions": regions_section,
             "📊 PowerBI": BI_section,
             "🤖 Machine Learning": machine_learning_section,
@@ -122,6 +98,12 @@ def main():
         for page_name in components.keys():
             if st.sidebar.button(page_name, key=page_name):
                 st.session_state.current_page = page_name
+        
+        st.sidebar.markdown("---")
+        st.sidebar.markdown("""
+        “If you torture the data long enough, it will confess.”
+        
+        Ronald Coase """)
         
         # Display the selected page
         components[st.session_state.current_page]()
