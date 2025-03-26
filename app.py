@@ -6,7 +6,7 @@ warnings.filterwarnings('ignore')
 
 
 from components.header import render_header
-from components.footer import render_footer
+from footer import render_footer
 from components.home import home_page
 from components.platforms import platforms_section
 from components.hashtags import hashtags_section
@@ -54,7 +54,7 @@ st.markdown(
 @st.cache_data
 def load_data():
     try:
-        cleaned_data = pd.read_csv('data/Viral_Social_Media_Trends_Cleaned.csv')
+        cleaned_data = pd.read_csv('data/social_media_dataset.csv')
         return cleaned_data
     except FileNotFoundError as e:
         st.error(f"Error: {e}")

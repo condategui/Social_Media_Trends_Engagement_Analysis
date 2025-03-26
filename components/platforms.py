@@ -19,7 +19,7 @@ def platforms_section():
     tab1, tab2, tab3, tab4, tab5 = st.tabs(['🔎 Overview', '📷 Instagram', '⚡️ TikTok', '📺 YouTube', '🐥 Twitter'])
     
     # Load the data
-    cleaned_data = pd.read_csv('data/Viral_Social_Media_Trends_Cleaned.csv')
+    cleaned_data = pd.read_csv('data/social_media_dataset.csv')
     
     # Custom color palette
     palette = ['#d04243', '#BBDB90', '#d0c2f7', '#f4a259', '#A5D9E3', '#CF6679']
@@ -32,7 +32,8 @@ def platforms_section():
             'Likes': 'mean',
             'Comments': 'mean',
             'Shares': 'mean',
-            'Views': 'mean'
+            'Views': 'mean', 
+            'Impressions': 'mean'
         }).reset_index()
         
         # Calculate engagement rate
@@ -46,9 +47,10 @@ def platforms_section():
         metrics['Comments'] = metrics['Comments'].apply(lambda x: f"{x:,.2f}")
         metrics['Shares'] = metrics['Shares'].apply(lambda x: f"{x:,.2f}")
         metrics['Views'] = metrics['Views'].apply(lambda x: f"{x:,.2f}")
+        metrics['Impressions'] = metrics['Impressions'].apply(lambda x: f"{x:,.2f}")
         
         # Rearrange columns
-        metrics = metrics[['Platform', 'Engagement Rate', 'Likes', 'Comments', 'Shares', 'Views']]
+        metrics = metrics[['Platform', 'Engagement Rate', 'Likes', 'Comments', 'Shares', 'Views', 'Impressions']]
         
         # Set the table style to center text
         styled_metrics = metrics.style.set_table_styles(
@@ -61,8 +63,7 @@ def platforms_section():
         
         st.markdown(""" 
         - **Engagement Rate**: The percentage of users who engaged with the post (likes, comments, shares) out of the total views.
-        - **Instagram**: The platform with the highest engagement rate.
-        - **YouTube**: The platform with the highest number of views.
+        - **TikTok**: The platform with the highest engagement rate.
         """)
         
         st.markdown("---")
@@ -82,16 +83,15 @@ def platforms_section():
         """)
         
         
-        graph1 = px.bar(cleaned_data[cleaned_data['Platform'] == 'TikTok'].groupby('Content_Type')['Views'].sum().reset_index(),
+        graph1 = px.bar(cleaned_data[cleaned_data['Platform'] == 'Instagram'].groupby('Content_Type')['Views'].sum().reset_index(),
                     x='Content_Type', y='Views', 
-                    title='TikTok Views by Content Type',
+                    title='Instagram Views by Content Type',
                     labels={'Views': 'Total Views', 'Content_Type': 'Content Type'},
                     color='Content_Type', color_discrete_sequence=palette)
         
         # Update layout for better readability
         graph1.update_layout(xaxis_title='Content Type', yaxis_title='Total Views',
                         xaxis={'categoryorder':'total descending'})
-        
         st.plotly_chart(graph1)
         
         st.markdown("""
