@@ -9,9 +9,8 @@ from components.header import render_header
 from footer import render_footer
 from components.home import home_page
 from components.platforms import platforms_section
-from components.hashtags import hashtags_section
+from components.other_variables import ov_section
 from components.content_type import content_type_section
-from components.regions import regions_section
 from components.machine_learning import machine_learning_section
 from components.PowerBI import BI_section
 from components.conclusions import conclusions_section
@@ -82,9 +81,8 @@ def main():
         components = {
             "🏠 Home Page": home_page,
             "📱 Platforms": platforms_section,
-            "#️⃣ Hashtags": hashtags_section,
             "📷 Content Type": content_type_section,
-            "🌍 Regions": regions_section,
+            "⚖️ Other Variables": ov_section,
             "📊 PowerBI": BI_section,
             "🤖 Machine Learning": machine_learning_section,
             "🔎 Conclusions": conclusions_section
