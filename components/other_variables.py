@@ -17,9 +17,6 @@ def ov_section():
     # Custom color palette
     palette = ['#d04243', '#BBDB90', '#d0c2f7', '#f4a259', '#A5D9E3', '#CF6679']
 
-    # Load the data
-    cleaned_data = pd.read_csv('data/social_media_dataset.csv')
-
     with tab1:
         col1, col2 = st.columns(2)
 
@@ -46,36 +43,8 @@ def ov_section():
     with tab2:
         st.markdown("# Topic")
         
-        # Hashtag Analysis Visualization
-        st.subheader("Hashtag Impact Analysis")
-        
-        # Total views by hashtag
-        hashtag_views = cleaned_data.groupby('Hashtag')['Views'].sum().reset_index()
-        
-        graph1 = px.bar(hashtag_views, 
-                        x='Hashtag', 
-                        y='Views', 
-                        title='Total Views by Hashtag',
-                        labels={'Views': 'Total Views', 'Hashtag': 'Hashtag'},
-                        color='Hashtag',
-                        color_discrete_sequence=palette)
-        
-        st.plotly_chart(graph1)
-        
         st.markdown("""
-        ### Hashtag Strategies
-        
-        Hashtags are powerful tools for:
-        - Content Categorization
-        - Increasing Discoverability
-        - Joining Trending Conversations
-        - Building Community
-
-        #### Best Practices:
-        1. Use Relevant and Specific Hashtags
-        2. Research Trending Topics
-        3. Create Branded Hashtags
-        4. Limit to 3-5 Hashtags per Post
+        dfg
         """)
 
     with tab3:
