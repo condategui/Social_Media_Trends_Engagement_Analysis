@@ -12,7 +12,7 @@ def ov_section():
     """)
 
     # Create tabs
-    tab1, tab2, tab3, tab4, tab5 = st.tabs(['🔎 Overview', '📌 Topic', '🌎 Region', '👥 Audience', '💼 Business'])
+    tab1, tab2, tab3, tab4, tab5 = st.tabs(['🔎 Overview', '📌 Topic', '🌎 Geography', '👥 Audience', '💼 Business'])
 
     # Custom color palette
     palette = ['#d04243', '#BBDB90', '#d0c2f7', '#f4a259', '#A5D9E3', '#CF6679']
@@ -41,35 +41,108 @@ def ov_section():
             st.image("img/sm.jpg", width=700, caption="Social Media Connections")
 
     with tab2:
-        st.markdown("# Topic")
-        
         st.markdown("""
-        dfg
+## Why Topic Analysis Matters in Social Media?
+Understanding topic variations is crucial for effective social media marketing. Your chosen subject matter significantly impacts:
+- **Audience expectations** - Different topics attract different audience segments with varying expectations
+- **Content format** - Topic determines appropriate content types (educational, entertaining, promotional)
+- **Engagement patterns** - Topic influences how and why people interact with your content
+- **Brand positioning** - Topic selection affects how your brand is perceived in the marketplace
+- **Communication style** - Topic dictates appropriate tone, vocabulary, and level of formality
         """)
+        
+        col5, col6 = st.columns(2)
+
+        with col5:
+            st.markdown("""
+    ## Benefits
+    ### Contextual Relevance
+    - Content aligned with appropriate topics for your audience builds credibility
+    - Topic-specific expertise positions your brand as an authority
+    - Timely topic selection creates immediate relevance and urgency
+    ### Topic Customization
+    - Different audience segments require different topic approaches
+    - Topic complexity affects content depth and technical language
+    - Topic sensitivity requires customized messaging approaches
+    ### Topic Competitive Edge
+    - Understanding topic nuances helps differentiate from competitors
+    - Topic expertise enables more meaningful audience connections
+    - Topic specialization creates stronger brand positioning
+            """)
+
+        with col6:
+            st.markdown("""
+    ## Best Practices
+    ### Topic Research
+    - Analyze platform engagement data by topic category
+    - Monitor topic-specific conversations and trending discussions
+    - Understand topic maturity and audience knowledge level
+    ### Topic Content Adaptation
+    - Adjust formality based on topic seriousness (corporate vs. casual)
+    - Select appropriate visual styles that complement topic context
+    - Consider topic sensitivity when planning humor or trendy content
+    ### Topic Performance Measurement
+    - Set topic-specific benchmarks based on industry standards
+    - Compare performance across topics to identify content strengths
+    - Use topic insights to optimize content strategy and editorial calendar
+            """)
 
     with tab3:
-        st.markdown("# Region")
-        
         st.markdown("""
-        ## Regional Variations in Social Media Usage
-        
-        Social media platforms are used differently across regions due to:
-        - Cultural Norms
-        - Local Trends
-        - Internet Accessibility
-        - Regulatory Environments
+## Why Geographic Analysis Matters in Social Media?
+
+Understanding geographic variations is crucial for effective social media marketing. Your target audience's location significantly impacts:
+
+- **Platform accessibility** - Different platforms are available or dominant in different geographic areas
+- **Content resonance** - Geographic context affects how content is received and interpreted
+- **User behaviors** - Geographic factors influence when and how people engage online
+- **Legal frameworks** - Geographic boundaries define applicable laws and regulations
+- **Cultural influences** - Geographic location shapes cultural norms, trends, and preferences
         """)
         
-        # Regional Comparison Table
-        region_data = {
-            'Region': ['North America', 'Europe', 'Asia', 'Latin America', 'Middle East', 'Africa'],
-            'Most Popular Platform': ['Facebook/Instagram', 'Instagram/TikTok', 'WeChat/TikTok', 'WhatsApp/Instagram', 'Instagram/Twitter', 'WhatsApp/Facebook'],
-            'Content Preference': ['Professional/Lifestyle', 'Short-form Video', 'Local Platforms', 'Messaging-based', 'News/Political', 'Community-driven'],
-            'Engagement Style': ['Analytical', 'Creative', 'Mobile-first', 'Social Commerce', 'Opinion-driven', 'Community Support']
-        }
+        col3, col4 = st.columns(2)
         
-        region_df = pd.DataFrame(region_data)
-        st.table(region_df)
+        with col3:
+            st.markdown("""
+## Benefits
+
+### Contextual Relevance
+- Content aligned with geographic context feels more authentic and relatable
+- Geographic targeting enables precise seasonal and weather-appropriate messaging
+- Local geographic references create immediate connection and recognition
+
+### Geographic Customization
+- Different geographic markets require different value propositions
+- Geographic purchasing power affects pricing and promotion strategies
+- Geographic product availability requires customized messaging
+
+### Geographic Competitive Edge
+- Understanding geographic nuances helps outperform generic competitors
+- Local geographic insights enable more agile response to regional trends
+- Geographic specialization creates stronger audience connections
+""")
+        
+        with col4: 
+            st.markdown("""
+## Best Practices
+
+### Geographic Research
+- Analyze platform usage data by geographic location
+- Monitor geographic-specific conversations and trending topics
+- Understand geographic economic and technological factors
+
+### Geographic Content Adaptation
+- Create geographically relevant examples and case studies
+- Adjust messaging to reflect geographic cultural values
+- Consider geographic factors like climate, urban/rural settings in visuals
+
+### Geographic Performance Measurement
+- Set geographic-specific benchmarks based on local standards
+- Compare performance across geographic areas to identify patterns
+- Use geographic insights to optimize targeting parameters
+
+            """)
+
 
     with tab4:
         st.markdown("# Audience")
