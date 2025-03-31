@@ -144,67 +144,78 @@ Understanding geographic variations is crucial for effective social media market
             """)
 
 
-    with tab4:
-        st.markdown("# Audience")
-        
-        st.markdown("""
-        ## Audience Segmentation Strategies
-        
-        Different platforms attract distinct audience segments:
-        
-        ### Professional Platforms
-        - LinkedIn: Career, B2B, Professional Networking
-        - Primarily 25-45 age group
-        - Focus: Professional achievements, industry insights
-        
-        ### Creative Platforms
-        - Instagram: Visual storytelling, lifestyle
-        - TikTok: Entertainment, trends
-        - Primarily 16-34 age group
-        - Focus: Personal branding, creativity
-        
-        ### Community Platforms
-        - Facebook: Family, community groups
-        - Reddit: Niche interests, discussions
-        - Broader age range
-        - Focus: In-depth conversations
-        """)
-        
-        # Audience Pie Chart
-        st.subheader("Audience Distribution")
-        audience_data = {
-            'Platform': ['Instagram', 'TikTok', 'Facebook', 'LinkedIn', 'Twitter'],
-            'Audience Share': [30, 25, 20, 15, 10]
-        }
-        
-        graph2 = px.pie(values=audience_data['Audience Share'], 
-                        names=audience_data['Platform'], 
-                        title='Social Media Platform Audience Share')
-        st.plotly_chart(graph2)
+        with tab4:
+            st.markdown("# Audience")
+            
+            st.markdown("""
+## Why Audience Analysis Matters in Social Media
+Understanding your audience is fundamental to effective social media marketing. Your target audience characteristics significantly impact:
+- **Content relevance** - Different audiences respond to different types of content and messaging
+- **Platform selection** - Audience demographics strongly influence which platforms they use most
+- **Engagement strategies** - Audience preferences determine how to best interact and build relationships
+- **Message personalization** - According to Zendesk, 68% of consumers expect personalized experiences
+- **Conversion tactics** - Different audiences require different approaches to move through the sales funnel
+            """)
+
+            col7, col8 = st.columns(2)
+
+            with col7:
+                st.markdown("""
+    ## Benefits
+    ### Demographic Insights
+    - Age, gender, occupation, and lifestyle information guide content creation
+    - Demographic data helps predict audience preferences and values
+    - Generational differences impact platform usage and content consumption
+    ### Behavioral Understanding
+    - Purchase history reveals product interests and spending patterns
+    - Engagement metrics indicate optimal posting times and content types
+    - Website interaction data shows content preferences and decision paths
+    ### Motivational Clarity
+    - Understanding why audiences engage creates more compelling messaging
+    - Audience motivations (convenience, value, status) guide positioning
+    - Identifying pain points enables more targeted problem-solving content
+                """)
+
+            with col8:
+                st.markdown(""" 
+    ## Best Practices
+    ### Audience Research
+    - Collect comprehensive demographic, behavioral, and motivational data
+    - Use surveys, focus groups, and social listening for deeper insights
+    - Create detailed audience personas based on real customer data
+    ### Audience Segmentation
+    - Divide broader audiences into specific segments for targeted messaging
+    - Customize content approach for different audience segments
+    - Test messaging effectiveness across different audience groups
+    ### Audience Engagement Measurement
+    - Track segment-specific engagement rates and conversion metrics
+    - Analyze audience response patterns to refine targeting strategy
+    - Use A/B testing to optimize content for specific audience segments
+                """)
 
     with tab5:
-        st.markdown("# Business Communication")
-        
         st.markdown("""
         ## Business Communication Strategies by Platform
+        """)
         
+        col9, col10 = st.columns(2)
+        
+        with col9:
+            st.markdown("""
         ### B2B Communication
         - LinkedIn: Professional, data-driven content
         - Twitter: Thought leadership, industry news
         - Focus: Expertise, credibility, networking
+            """)
         
+        with col10:
+            st.markdown("""
         ### B2C Communication
         - Instagram: Visual storytelling, product showcase
         - TikTok: Trendy, authentic content
         - Facebook: Community engagement
         - Focus: Emotional connection, brand personality
-        
-        ### Key Differences
-        - Tone
-        - Content Type
-        - Engagement Metrics
-        - Target Audience
-        """)
+            """) 
         
         # B2B vs B2C Comparison
         comparison_data = {
