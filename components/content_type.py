@@ -24,6 +24,7 @@ def content_type_section():
         
         # Calculate average metrics per content type
         metrics = cleaned_data.groupby('Content_Type').agg({
+            'Engagement_Rate': 'mean',
             'Likes': 'mean',
             'Comments': 'mean',
             'Shares': 'mean',
@@ -31,11 +32,8 @@ def content_type_section():
             'Impressions': 'mean'
         }).reset_index()
         
-        # Calculate engagement rate
-        metrics['Engagement Rate'] = ((metrics['Likes'] + metrics['Comments'] + metrics['Shares']) / metrics['Views']) * 100
-        
         # Convert engagement rate to percentage string
-        metrics['Engagement Rate'] = metrics['Engagement Rate'].apply(lambda x: f"{x:.2f}%")
+        metrics['Engagement_Rate'] = metrics['Engagement_Rate'].apply(lambda x: f"{x*100:.2f}%")
         
         # Format numbers with comma separators and two decimals
         metrics['Likes'] = metrics['Likes'].apply(lambda x: f"{x:,.2f}")
@@ -45,7 +43,7 @@ def content_type_section():
         metrics['Impressions'] = metrics['Impressions'].apply(lambda x: f"{x:,.2f}")
         
         # Rearrange columns
-        metrics = metrics[['Content_Type', 'Engagement Rate', 'Likes', 'Comments', 'Shares', 'Views', 'Impressions']]
+        metrics = metrics[['Content_Type', 'Engagement_Rate', 'Likes', 'Comments', 'Shares', 'Views', 'Impressions']]
         
         # Set the table style to center text
         styled_metrics = metrics.style.set_table_styles(
@@ -77,13 +75,14 @@ def content_type_section():
                     labels={'Engagement_rate': 'Engagement Rate', 'Platform': 'Platform'},
                     color='Platform', color_discrete_sequence=palette)
         
-        graph1.update_layout(xaxis_title='Platform', yaxis_title='Engagement Rate', yaxis_range=[0.25, 0.30])
+        graph1.update_layout(xaxis_title='Platform', yaxis_title='Engagement Rate', yaxis_range=[0.0, 0.28])
         st.plotly_chart(graph1)
         
         st.markdown("""
         - **Facebook**: offers longer, more in-depth content.
         - **Instagram**: Reels and Stories provide quick, engaging clips.
         - **TikTok**: focuses on short, viral videos.
+        - **Twitter**: videos are often used to complement text posts.
         """)
     
     with tab3:
@@ -100,12 +99,12 @@ def content_type_section():
                     labels={'Engagement_Rate': 'Engagement Rate', 'Platform': 'Platform'},
                     color='Platform', color_discrete_sequence=palette)
         
-        graph3.update_layout(xaxis_title='Platform', yaxis_title='Engagement Rate', yaxis_range=[0.25, 0.30])
+        graph3.update_layout(xaxis_title='Platform', yaxis_title='Engagement Rate', yaxis_range=[0.0, 0.30])
         st.plotly_chart(graph3)
         
         st.markdown("""
-        - **Instagram**: audience keeps engaging with photo posts.
         - **Facebook**: also sees significant photo engagement.
+        - **Instagram**: audience keeps engaging with photo posts.
         - **TikTok**: has a smaller focus on photos, with more emphasis on videos since the algorithm favors video content.
         - **Twitter**: photos are used to complement text posts.
         """)
@@ -123,12 +122,13 @@ def content_type_section():
                     labels={'Engagement_Rate': 'Engagement Rates', 'Platform': 'Platform'},
                     color='Platform', color_discrete_sequence=palette)
         
-        graph5.update_layout(xaxis_title='Platform', yaxis_title='Engagement Rate', yaxis_range=[0.25, 0.31])
+        graph5.update_layout(xaxis_title='Platform', yaxis_title='Engagement Rate', yaxis_range=[0.0, 0.29])
         st.plotly_chart(graph5)
         
         st.markdown("""
-        Carousel content insights:
-        - **Facebook**: gets the higger engagement rate since the audience tends to spend more time scrolling through multiple images.
+        - **Facebook**: gets the higger engagement rate since the audience tends to spend more time scrolling through multiple images (compared to ther content type).
+        - **Instagram**: Carousels are a popular format, allowing users to swipe through multiple images or videos.
+        - **Twitter**: Carousels get a great engagement rate.
         """)
     
     with tab5:
@@ -143,12 +143,12 @@ def content_type_section():
                     labels={'Engagement_Rate': 'Engagement Rate', 'Platform': 'Platform'},
                     color='Platform', color_discrete_sequence=palette)
         
-        graph7.update_layout(xaxis_title='Platform', yaxis_title='Engagement Rate', yaxis_range=[0.25, 0.30])
+        graph7.update_layout(xaxis_title='Platform', yaxis_title='Engagement Rate')
         st.plotly_chart(graph7)
         
         st.markdown("""
-        - **Facebook**: text posts are often used for announcements and discussions and get higher engagement.
-        - **Twitter**: text posts are the primary format, with a focus on brevity and immediacy. Generally, Twitter posts get a lower engagement rate.
+        - **Facebook**: text posts are often used for announcements and discussions.
+        - **Twitter**: text posts are the primary format, with a focus on brevity and immediacy.
         """)
 
     with tab6:
@@ -197,8 +197,8 @@ background-color: rgba(244, 162, 89, 0.5);
 <tr>
 <td>Best Platform</td>
 <td class="video">TikTok, Instagram</td>
-<td class="photo">Instagram, Facebook</td>
-<td class="carousel">Instagram, Facebook</td>
+<td class="photo">Instagram, Facebook, Twitter</td>
+<td class="carousel">Instagram, Facebook, Twitter</td>
 <td class="text">Twitter, Facebook</td>
 </tr>
 <tr>

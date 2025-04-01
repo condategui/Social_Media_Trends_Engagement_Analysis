@@ -1,51 +1,114 @@
 import streamlit as st  
 
 def home_page():
-    st.title("Welcome to the Social Media Trends Engagement Analysis")
-    st.markdown(
-        """
-        This application is a dashboard that allows you to analyze the engagement of social media trends. 
-        You can navigate through the different sections using the sidebar on the left. 
-        The data used in this application is a dataset of viral social media trends. 
-        """
-    )
-    st.markdown(
-        """
-        The dataset contains the following columns:
-        - `id`: The unique identifier of the trend.
-        - `platform`: The social media platform where the trend was posted.
-        - `post_date`: The date when the trend was posted.
-        - `post_time`: The time when the trend was posted.
-        - `content_type`: The type of content of the trend (e.g., image, video, text).
-        - `hashtags`: The hashtags used in the trend.
-        - `likes`: The number of likes of the trend.
-        - `shares`: The number of shares of the trend.
-        - `comments`: The number of comments of the trend.
-        - `engagement`: The engagement of the trend (i.e., the sum of likes, shares, and comments).
-        - `region`: The region where the trend was posted.
-        """
-    )
-    st.markdown(
-        """
-        The sidebar on the left allows you to navigate through the different sections of the application:
-        - `🏠 Home Page`: The welcome page of the application.
-        - `📱 Platforms`: The analysis of the engagement by social media platform.
-        - `#️⃣ Hashtags`: The analysis of the engagement by hashtags.
-        - `🤳🏻 Content Type`: The analysis of the engagement by content type.
-        - `🌍 Regions`: The analysis of the engagement by region.
-        - `📊 PowerBI`: The PowerBI report of the trends.
-        - `🤖 Machine Learning`: The machine learning model to predict the engagement.
-        - `🔎 Conclusions`: The conclusions of the analysis.
-        """
-    )
-    st.markdown(
-        """
-        The data used in this application is a dataset of viral social media trends. 
-        You can download the dataset from [this link](https://www.kaggle.com/datasnaek/youtube-new).
-        """
-    )
-
-    st.markdown(
-        """
-        The source code of this application
-        is available on [GitHub]""")
+    st.header("📱 Project Overview")
+    
+    col1, col2 = st.columns([2, 1])
+    
+    with col1:
+        st.markdown("""
+        Welcome to my **Social Media Trends Engagement Analysis** dashboard!
+        
+        This project represents the culmination of my Data Analysis and AI BootCamp journey.
+        
+        As a Social Media Manager, I've created this interactive tool to demonstrate how data analysis is crucial for understanding platform performance and audience engagement patterns. Through visualizations and metrics, we'll explore what drives successful content across various social platforms.
+        
+        The custom dataset used in this analysis combines real-world data from previous projects, providing authentic insights into social media performance metrics.
+        """)
+    
+    with col2:
+        st.info("""
+        **Key Benefits:**
+        - Identify top-performing content types
+        - Compare engagement across platforms
+        - Understand audience preferences
+        - Optimize posting strategies
+        - Make data-driven social media decisions
+        """)
+    
+    # Dataset description
+    st.header("📊 Dataset Information")
+    
+    st.markdown("""
+    The analysis is based on a comprehensive dataset containing social media performance metrics across multiple platforms. Each entry represents a specific social media post with the following attributes:
+    """)
+    
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.markdown("""
+        - **`id`**: Unique identifier for each post
+        - **`platform`**: Social media platform (Facebook, Instagram, Twitter and TikTok)
+        - **`content_type`**: Format of the content (image, video, text and carrousel)
+        - **`likes`**: Number of likes/reactions received
+        - **`shares`**: Number of times the content was shared
+        """)
+    
+    with col2:
+        st.markdown("""
+        - **`comments`**: Number of comments on the post
+        - **`engagement_rate`**: percentage of users who engaged with the post (likes, comments, shares) out of the total views
+        - **`views`**: Number of content views
+        - **`impressions`**: Total number of times content was displayed
+        """)
+    
+    # Dashboard navigation
+    st.header("🧭 Dashboard Navigation")
+    
+    st.markdown("""
+    Explore different aspects of social media performance through these dedicated sections:
+    """)
+    
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.markdown("""
+        - **🏠 Home Page**: Overview and introduction
+        - **📱 Platforms**: Platform-specific engagement analysis
+        - **🤳 Content Type**: Performance by content format
+        """)
+    
+    with col2:
+        st.markdown("""
+        - **#️⃣ Other Variables**: Additional engagement factors
+        - **📊 PowerBI**: Interactive PowerBI reports
+        - **🔎 Conclusions**: Key findings and recommendations
+        """)
+    
+    # Call to action
+    st.markdown("---")
+    
+    col1, col2, col3 = st.columns([1, 2, 1])
+    
+    with col2:
+        st.success("""
+        ### Ready to explore social media insights?
+        
+        Use the sidebar to navigate through different sections of the analysis and discover 
+        what drives engagement across platforms.
+        """)
+    
+    # Resources and links
+    st.markdown("---")
+    
+    st.header("📚 Resources")
+    
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.markdown("""
+        ### Dataset Source
+        The dataset used in this analysis is available for download at:
+        [GitHub - Clàudia Ondategui](https://github.com/condategui/Social_Media_Trends_Engagement_Analysis/tree/main/data)
+        
+        *Note: The original dataset has been modified for the purposes of this analysis.*
+        """)
+    
+    with col2:
+        st.markdown("""
+        ### Project Repository
+        View the complete source code and additional resources on GitHub:
+        [GitHub Repository](https://github.com/condategui/Social_Media_Trends_Engagement_Analysis)
+        
+        Feel free to star the repository if you find this analysis helpful!
+        """)

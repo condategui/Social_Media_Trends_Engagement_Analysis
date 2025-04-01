@@ -6,7 +6,7 @@ warnings.filterwarnings('ignore')
 
 
 from components.header import render_header
-from footer import render_footer
+from components.footer import render_footer
 from components.home import home_page
 from components.platforms import platforms_section
 from components.other_variables import ov_section

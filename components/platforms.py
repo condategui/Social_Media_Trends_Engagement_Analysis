@@ -58,7 +58,7 @@ def platforms_section():
         
         st.markdown(""" 
         - **Engagement Rate**: The percentage of users who engaged with the post (likes, comments, shares) out of the total views.
-        - **TikTok**: The platform with the highest engagement rate.
+        - **Instagram**: The platform with the highest engagement rate.
         """)
         
         st.markdown("---")
@@ -90,7 +90,7 @@ def platforms_section():
         st.plotly_chart(graph1)
         
         st.markdown("""
-        Instagram has been evolving over the years, with new features like Stories, Reels so right now the content that is better working are videos (Reels), but the users keep posting Photos and Carrousels (more than one photo on the same post).
+        - Instagram has been evolving over the years, with new features like Stories, Reels so right now the content that is better working are videos (Reels), but the users keep posting Photos and Carrousels (more than one photo on the same post).
         """)
         
         graph11 = px.bar(cleaned_data[cleaned_data['Platform'] == 'Instagram'].groupby('Content_Type')['Engagement_Rate'].mean().reset_index(),
@@ -105,9 +105,8 @@ def platforms_section():
         st.plotly_chart(graph11)
         
         st.markdown("""
-        The engagement rate on Instagram is higher for photos than for videos.
-        
-        Views not always correlate with engagement. The engagement rate is a more reliable metric for assessing content performance.
+        - The engagement rate on Instagram is higher for photos than for videos.
+        - Views don't correlate with engagement. The engagement rate is a more reliable metric for assessing content performance.
         """)
         
         graph2 = px.pie(cleaned_data[cleaned_data['Platform'] == 'Instagram'].groupby('Hashtag')['Views'].sum().reset_index(),
@@ -145,7 +144,7 @@ def platforms_section():
         st.plotly_chart(graph3)
         
         st.markdown("""
-        TikTok's content strategy revolves around short, engaging videos that capture users' 
+        - TikTok's content strategy revolves around short, engaging videos that capture users' 
         attention quickly, within the first 3 seconds. 
         """)
         
@@ -161,8 +160,8 @@ def platforms_section():
         st.plotly_chart(graph33)
         
         st.markdown("""
-        The engagement rate on TikTok is higher for videos than for photos.
-        The platform's algorithm favors engaging, high-quality video content,
+        - The engagement rate on TikTok is higher for videos than for photos.
+        - The platform's algorithm favors engaging, high-quality video content,
         which can lead to higher visibility and interaction rates.
         """)
         
@@ -202,7 +201,7 @@ def platforms_section():
         st.plotly_chart(graph5)
         
         st.markdown("""
-        Facebook offers versatility in content types, only Text and Photo posts are the ones that get more views.
+        - Facebook offers versatility in content types, only Text and Photo posts are the ones that get more views.
         """)
         
         graph55 = px.bar(cleaned_data[cleaned_data['Platform'] == 'Facebook'].groupby('Content_Type')['Engagement_Rate'].mean().reset_index(),
@@ -217,9 +216,8 @@ def platforms_section():
         st.plotly_chart(graph55)
         
         st.markdown("""
-        Carrousels and Photo posts are the most popular content type on Facebook with higher engagement rates.
-        Only Text posts are the least popular content type since users prefer to interact with dynamic content.
-        """)
+        - Carrousels are the most engaging content type on Facebook.
+        - The engagement rate on Facebook is higher for videos than for photos.""")
         
         graph6 = px.pie(cleaned_data[cleaned_data['Platform'] == 'Facebook'].groupby('Hashtag')['Views'].sum().reset_index(),
                     names='Hashtag', values='Views', 
@@ -259,7 +257,7 @@ def platforms_section():
         st.plotly_chart(graph7)
         
         st.markdown("""
-        Plain tweets are the most popular content type on Twitter, Videos are the least popular since users prefer to watch videos on other platforms.
+        - Tweets with a Photo are the most popular content type on Twitter, Videos are the least popular since users prefer to watch videos on other platforms.
         """)
         
         graph77 = px.bar(cleaned_data[cleaned_data['Platform'] == 'Twitter'].groupby('Content_Type')['Engagement_Rate'].mean().reset_index(),
@@ -274,7 +272,7 @@ def platforms_section():
         st.plotly_chart(graph77)
         
         st.markdown("""
-        Posts with images and videos have a higher engagement rate than plain text posts. Users are more likely to interact with visually appealing content.
+        - Posts with Photos and Carrousel have a higher engagement rate than Text and Video posts. Users are more likely to interact with visually appealing content.
         """)
         
         graph8 = px.pie(cleaned_data[cleaned_data['Platform'] == 'Twitter'].groupby('Hashtag')['Views'].sum().reset_index(),

@@ -5,14 +5,10 @@ def conclusions_section():
     
     st.markdown(
         """
-        After analyzing the data, we can draw the following conclusions:
         
-        1. The most popular platforms are Twitter and Instagram.
-        2. The most common content type is image.
-        3. The most popular hashtags are #COVID19 and #BlackLivesMatter.
-        4. The most popular regions are North America and Europe.
-        5. The most common sentiment is neutral.
-        6. The most common language is English.
+        Consultions for this dataset, with diferent data que take away and the social media strategy can change.
+        
+        ge is English.
         7. The most common day of the week is Monday.
         8. The most common hour of the day is 12:00.
         9. The most common month is January.
