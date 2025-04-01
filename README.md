@@ -2,7 +2,9 @@
 
 ## 📱 Project Overview
 
-Welcome to the **Social Media Trends Engagement Analysis** dashboard! This project represents the culmination of a Data Analysis and AI BootCamp journey, created from the perspective of a Social Media Manager.
+Welcome to the **Social Media Trends Engagement Analysis** dashboard!
+
+This project represents the culmination of a Data Analysis and AI BootCamp journey, created from the perspective of a Social Media Manager.
 
 This interactive tool demonstrates how data analysis is crucial for understanding platform performance and audience engagement patterns. Through visualizations and metrics, the dashboard explores what drives successful content across various social platforms including Facebook, Instagram, Twitter, and TikTok.
 
