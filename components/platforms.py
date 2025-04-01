@@ -26,6 +26,7 @@ def platforms_section():
         
         # Calculate average engagement metrics per platform
         metrics = cleaned_data.groupby('Platform').agg({
+            'Engagement_Rate': 'mean',
             'Likes': 'mean',
             'Comments': 'mean',
             'Shares': 'mean',
@@ -33,11 +34,8 @@ def platforms_section():
             'Impressions': 'mean'
         }).reset_index()
         
-        # Calculate engagement rate
-        metrics['Engagement Rate'] = ((metrics['Likes'] + metrics['Comments'] + metrics['Shares']) / metrics['Views']) * 100
-        
         # Convert engagement rate to percentage string
-        metrics['Engagement Rate'] = metrics['Engagement Rate'].apply(lambda x: f"{x:.2f}%")
+        metrics['Engagement_Rate'] = metrics['Engagement_Rate'].apply(lambda x: f"{x*100:.2f}%")
         
         # Format numbers with comma separators and two decimals
         metrics['Likes'] = metrics['Likes'].apply(lambda x: f"{x:,.2f}")
@@ -47,7 +45,7 @@ def platforms_section():
         metrics['Impressions'] = metrics['Impressions'].apply(lambda x: f"{x:,.2f}")
         
         # Rearrange columns
-        metrics = metrics[['Platform', 'Engagement Rate', 'Likes', 'Comments', 'Shares', 'Views', 'Impressions']]
+        metrics = metrics[['Platform', 'Engagement_Rate', 'Likes', 'Comments', 'Shares', 'Views', 'Impressions']]
         
         # Set the table style to center text
         styled_metrics = metrics.style.set_table_styles(
@@ -159,7 +157,7 @@ def platforms_section():
         
         # Update layout for better readability
         graph33.update_layout(xaxis_title='Content Type', yaxis_title='Engagement Rate',
-                        xaxis={'categoryorder':'total descending'}, yaxis_range=[0.25, 0.30])
+                        xaxis={'categoryorder':'total descending'}, yaxis_range=[0.1, 0.14])
         st.plotly_chart(graph33)
         
         st.markdown("""
@@ -200,7 +198,7 @@ def platforms_section():
         
         # Update layout for better readability
         graph5.update_layout(xaxis_title='Content Type', yaxis_title='Total Views',
-                        xaxis={'categoryorder':'total descending'}, yaxis_range=[50000000, 64000000])
+                        xaxis={'categoryorder':'total descending'}, yaxis_range=[12500000, 14500000])
         st.plotly_chart(graph5)
         
         st.markdown("""
@@ -215,7 +213,7 @@ def platforms_section():
         
         # Update layout for better readability
         graph55.update_layout(xaxis_title='Content Type', yaxis_title='Engagement Rate',
-                        xaxis={'categoryorder':'total descending'}, yaxis_range=[0.25, 0.30])
+                        xaxis={'categoryorder':'total descending'})
         st.plotly_chart(graph55)
         
         st.markdown("""
@@ -257,7 +255,7 @@ def platforms_section():
         
         # Update layout for better readability
         graph7.update_layout(xaxis_title='Content Type', yaxis_title='Total Views',
-                        xaxis={'categoryorder':'total descending'}, yaxis_range=[50000000, 64000000])
+                        xaxis={'categoryorder':'total descending'}, yaxis_range=[23000000, 28000000])
         st.plotly_chart(graph7)
         
         st.markdown("""
@@ -272,7 +270,7 @@ def platforms_section():
         
         # Update layout for better readability
         graph77.update_layout(xaxis_title='Content Type', yaxis_title='Engagement Rate',
-                        xaxis={'categoryorder':'total descending'}, yaxis_range=[0.25, 0.30])
+                        xaxis={'categoryorder':'total descending'}, yaxis_range=[0.16, 0.23])
         st.plotly_chart(graph77)
         
         st.markdown("""
