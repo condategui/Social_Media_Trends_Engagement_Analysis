@@ -6,3 +6,5 @@ folium
 numpy
 matplotlib
 seaborn
+plotly.express
+streamlit_folium
