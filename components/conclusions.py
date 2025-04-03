@@ -9,7 +9,7 @@ def conclusions_section():
         - Continue the efforts on Twitter and Instagram, as they are the most popular platforms for social media trends.
         - Consider diversifying content on Facebook and TikTok to increase engagement.
         - Monitor the performance of TikTok, as it is a growing platform with potential for engagement.
-        -
+        
         ## 📷 Content Type
         - Keep producing videos, as they are the most popular content type. Stay up to date with the latest trends and formats.
         - Experiment with carousels, as they are also popular and can be used to showcase multiple images or videos in a single post.
