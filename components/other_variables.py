@@ -144,11 +144,9 @@ Understanding geographic variations is crucial for effective social media market
             """)
 
 
-        with tab4:
-            st.markdown("# Audience")
-            
+        with tab4:           
             st.markdown("""
-## Why Audience Analysis Matters in Social Media
+## Why Audience Analysis Matters in Social Media?
 Understanding your audience is fundamental to effective social media marketing. Your target audience characteristics significantly impact:
 - **Content relevance** - Different audiences respond to different types of content and messaging
 - **Platform selection** - Audience demographics strongly influence which platforms they use most

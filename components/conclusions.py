@@ -3,20 +3,22 @@ import streamlit as st
 def conclusions_section():
     st.title("Conclusions")
     
-    st.markdown(
-        """
+    st.markdown("""
         
-        Consultions for this dataset, with diferent data que take away and the social media strategy can change.
+        ## 📱 Platforms
+        - Continue the efforts on Twitter and Instagram, as they are the most popular platforms for social media trends.
+        - Consider diversifying content on Facebook and TikTok to increase engagement.
+        - Monitor the performance of TikTok, as it is a growing platform with potential for engagement.
+        -
+        ## 📷 Content Type
+        - Keep producing videos, as they are the most popular content type. Stay up to date with the latest trends and formats.
+        - Experiment with carousels, as they are also popular and can be used to showcase multiple images or videos in a single post.
+        - Consider using more images, as they are also popular and can be used to complement video content.
         
-        ge is English.
-        7. The most common day of the week is Monday.
-        8. The most common hour of the day is 12:00.
-        9. The most common month is January.
-        10. The most common year is 2020.
+        ## ⚖️ Other Variables
+        - Understand your audience preferences and tailor content to their interests.
+        - Don't forget the geographic location of your audience, as it can influence engagement and content preferences.
+        - Optimize posting strategies based on the most common day and hour of the week for engagement.
+        - Review continuously the variables that affect the engagement rate, as they can change over time, and adapt the strategy accordingly.
         
-        In conclusion, the data shows that social media trends are influenced by current events, such as the COVID-19 pandemic and the Black Lives Matter movement. 
-        The data also shows that social media trends are most popular on Twitter and Instagram, with images being the most common content type. 
-        The data also shows that social media trends are most popular in North America and Europe, with a neutral sentiment being the most common. 
-        The data also shows that social media trends are most common in English, with Monday being the most common day of the week, 12:00 being the most common hour of the day, January being the most common month, and 2020 being the most common year.
-        """
-    )
+        """)
